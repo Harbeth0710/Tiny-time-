@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>传播营</title>
+    <link rel="stylesheet" href="layui/layui.css">
+    <style>
+        body {
+            background: url("911/bg1.jpg") top center no-repeat;
+            background-size: 600px 800px;
+            font-weight: bold;
+        }
+        * {
+            font-family:Microsoft YaHei;
+            margin: 0;
+            padding: 0;
+        }
+        button{
+            background-color: white;
+            padding: 5px;
+            border-radius: 8px;
+            border:5px solid #3FC;
+            cursor:pointer;
+            font-weight: bold;
+            font-size: 40px;
+            color: #3FC;
+        }
+        textarea{
+            display: block;
+            border:none;
+            height: 100px;
+            width: 250px;
+            font-size: 20px;
+        }
+        a:active, a:hover {
+            outline: 0;
+            color: #777;
+        }
+        a {
+            color: #333;
+            text-decoration: none
+        }
+        .cby1{
+            position: relative;
+            top: -10em;
+        }
+        .cby2{
+            color:white;
+            font-size: 3em;
+            position: relative;
+            top: 2.8em;
+            margin: 0 auto;
+            font-weight:bold;
+            display: none;
+        }
+        .cby3{
+            font-size: 5em;
+            position: relative;
+            top: 3.7em;
+            margin: 0 auto;
+            font-weight:bold;
+            display: none;
+        }
+        .dt{
+            padding:10px;
+            border:1px solid #739CEF;
+            border-radius:20px;
+            width:400px;
+            height: 200px;
+            background-color: #739CEF;
+            color:#017AFF;
+            font-size: 1.5em;
+            position: relative;
+            top: 5em;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        .dt1{
+            width:300px;height: 200px;
+            text-align: left;
+            color:#017AFF;
+            font-size: 2em;
+            position: relative;
+            top: 6em;
+            margin: 0 auto;
+            font-weight:bold;
+        }
+        .question{
+            padding:30px 50px;
+            font-size: 25px;
+            border-radius:20px;
+            background-color: white;
+            text-shadow: 1px 1px #3CF;
+            line-height: 2;
+            position: relative;
+            width: 300px;height: 150px;
+        }
+        .as{
+            padding:30px;
+            font-size: 20px;
+            border:5px solid #3CF;
+            border-radius:20px;
+            width: 250px;height: 150px;
+            background-color: white;
+            position: relative;
+            top: -30px;left: -15px;
+        }
+        .bout{
+            font-size: 35px;
+            position: relative;
+            top: 7em;
+            margin: 0 auto;
+            font-weight:bold;
+        }
+        #return{
+            background-color: #739CEF;
+            padding: 10px;
+            border-radius: 10px;
+            width: 5em;
+            border: 5px solid white;
+            cursor:pointer
+        }
+        #next{
+            margin-left:30px;
+            background-color: #739CEF;
+            padding: 10px;
+            border-radius: 10px;
+            width: 5em;
+            border: 5px solid white;
+            cursor:pointer
+        }
+        .last{
+            color:#017AFF;
+            position: relative;
+            top: 5em;
+            margin: 0 auto;
+            font-weight:bolder;
+        }
+        #ys{
+            width: 400px;
+            margin: 0 auto;
+            border: 10px solid pink;
+            background-color: rgba(255,255,255,0.3);
+        }
+        #dj{
+            color:pink;
+            font-size: 6em;
+            display: inline-block;
+            height: 200px;width: 90px;
+            line-height: 2;
+            border-right: 10px solid pink;
+            text-align: center;
+        }
+        .cbylast{
+            font-size: 2.5em;
+            display: inline-block; 
+            line-height: 1.5;
+            width: 230px;
+            text-align: center;
+        }
+        .img{
+            display: inline-block;
+            height: 200px;
+            margin: 30px auto;
+            position: relative;
+            bottom: 12px;
+        }
+        .plast{
+            font-size: 1.5em;
+            margin: 0 auto;
+            font-weight:bold;
+            line-height: 1.8;
+            color: white;
+            font-style: italic;
+            text-shadow: 2px 1px #3CF;
+        }
+    </style>
+</head>
+<body>
+<!--开始页面-->
+<div id="body">
+    <div id="p1" style="text-align: center;">
+        <div>
+            <div id="cby2020" class="cby1"><img src="911/2020.png" style="width: 250px;text-align:left;"></div>
+            <div id="cby2020-2" class="cby2">快来展示你的舞台<br>获取你的初评级！</div>
+            <div id="cby2020-3" class="cby3">
+                <button>Yes ok! </button>
+            </div>
+        </div>
+    </div>
+<!--答题页面-->
+    <div id="p2" style="text-align: center;display: none;">
+        <form class="layui-form">
+            <div>
+                <div id="dt2" class="dt">
+                    <div id="Q1"  class="question">网页设计与制作是由传播名师________教学。
+                    </div>
+                    <div id="Q2" class="question" style="
+                    display: none;">截至7月16日，青年大学习更新到第几期？
+                    </div>
+                    <div id="Q3" class="question" style="
+                    display: none;">8位数字的班级号是________。
+                    </div>
+                    <div id="Q4" class="question" style="
+                    display: none;">“传播911”QQ群中________的名字笔画最少。
+                    </div>
+                    <div id="Q5" class="question" style="
+                    display: none;">班内美丽可爱善良活泼开朗阳光的小姐姐有________位。
+                    </div>
+                    <div id="Q6" class="question" style="
+                    display: none;">传播名师王松老师提及次数最多的app是
+                    </div>
+                    <div id="Q7" class="question" style="
+                    display: none;">班里最爱水群的同学是________。
+                    </div>
+                    <div id="Q8" class="question" style="
+                    display: none;">接下来的两年，最想跟班级同学一起做的事情是什么？
+                    </div>
+                </div>
+
+                <div id="dt2" class="dt1">
+                    <div id="AS1" class="as">
+                        <textarea name="A1" id="A1"></textarea>
+                    </div>
+                    <div id="AS2" class="as" style="display: none;">
+                        <div>
+                                <input type="radio" name="A2" value="第九季第九期" title="第九季第九期" checked><br/>
+                                <input type="radio" name="A2" value="第八季第九期" title="第八季第九期"><br/>
+                                <input type="radio" name="A2" value="第九季第十期" title=" 第九季第十期"><br/>
+                                <input type="radio" name="A2" value="第九季第八期" title="第九季第八期"><br/>
+                        </div>
+                    </div>
+                    <div id="AS3" class="as" style="display: none;">
+                        <textarea name="A3" id="A3"></textarea>
+                    </div>
+                    <div id="AS4" class="as" style="display: none;">
+                        <textarea name="A4" id="A4"></textarea>
+                    </div>
+                    <div id="AS5" class="as" style="display: none;">
+                        <textarea name="A5" id="A5"></textarea>
+                    </div>
+                    <div id="AS6" class="as" style="display: none;">
+                        <div>
+                                <input type="radio" name="A6" value="快手" title="快手" checked><br/>
+                                <input type="radio" name="A6" value="今日头条" title="今日头条"><br/>
+                                <input type="radio" name="A6" value="抖音" title=" 抖音"><br/>
+                                <input type="radio" name="A6" value="淘宝" title="淘宝"><br/>
+                        </div>
+                    </div>
+                    <div id="AS7" class="as" style="display: none;">   
+                        <textarea name="A7" id="A7"></textarea>
+                    </div>
+                    <div id="AS8" class="as" style="display: none;">
+                        <textarea name="A8" id="A8"></textarea>
+                    </div>
+                </div>
+        </form>
+
+        <div class="bout">
+            <a id="return">Retrun</a>
+            <a id="next">Next</a>
+        </div>
+    </div>
+</div>
+<!--出示评级结果页面-->
+<div id="p3" style="text-align: center;display: none;">
+        <div class="last">
+            <table id="ys">
+                <tr>
+                    <td id="dj">A</td>
+                    <td class="cbylast"><img src="911/2020.png" style="width: 220px;"></td>
+                </tr>
+            </table>
+        </div>
+        <br><br><br><br><br>
+    <div class="plast">
+        <p>一段不可错过的风景<br>相伴的日子，轻爽、清淡<br>平淡时光<br>故事继续...
+        </p><br>
+        <img src="911/2.jpg" class="img">
+    </div>
+</div>
+
+<script src="layui/layui.all.js">
+    ;!function () {
+        var layer = layui.layer
+        var form = layui.form;
+    }();//链接“layui”js文件并获取其中的样式
+</script>
+
+<script>
+    layui.use(['carousel', 'form'], function () {
+        var carousel = layui.carousel
+            , form = layui.form;
+
+        var $ = layui.$//遵循 layui 的模块规范建立一个入口文件，并通过 layui.use() 方式来加载该入口文件,否则会因为没有定义$而报错 
+
+        $("#cby2020-3").click(
+            function () {
+                $("#p1").hide();
+                $("body").css({
+                    'background': ' url(911/bg2.jpg) no-repeat top center',
+                    'background-size': '600px 850px'
+                });
+                $("#p2").show();//修改背景
+            }
+        )
+        let i = 1;
+        let num = 0;
+        $("#next").click(
+            function () {
+                i++;
+                if (i==8){
+                    $("#next").text("Submit");//提交时计算等级
+                }
+                if (i>8){
+                    i--;
+                    console.log("xxx");
+                    console.log($("form").serialize()); //输出字符串
+                    console.log($("form").serializeArray()); //输出数组
+                   let asarr = $("form").serializeArray();//答案数组
+                    num = 0;
+                    if (asarr[0].value&&asarr[0].value.trim()=='刘合翔'){
+                        num++;
+                    }
+                    if (asarr[1].value&&asarr[1].value.trim()=='第九季第十期'){
+                        num++;
+                    }
+                    if (asarr[2].value&&asarr[2].value.trim()=='18221911'){
+                        num++;
+                    }
+                    if (asarr[3].value&&asarr[3].value.trim()=='刘林'){
+                        num++;
+                    }
+                    if (asarr[4].value&&asarr[4].value.trim()=='29'){
+                        num++;
+                    }
+                    if (asarr[5].value&&asarr[5].value.trim()=='今日头条'){
+                        num++;
+                    }
+                    if (asarr[6].value&&asarr[6].value.trim()=='史江然'){
+                        num++;
+                    }//固定答案内容
+
+                    $("#p2").hide();
+                    $("body").css({
+                        'background': ' url(911/bg3.jpg) no-repeat top center',
+                        'background-size': '600px 850px'
+                    });
+                    //等级规则，（不含第八题）答对6道是A，5道或者4道是B，3道是C，2道以下是D。
+                    if (num==6){
+                        $("#ys").css({
+                            'border': '10px solid pink'
+                        });
+                        $("#dj").css({
+                            'border-right': '10px solid pink',
+                            'color':'pink'
+                        });
+                        $("#dj").text("A")//等级为A的颜色
+                    }
+                    if (num==5||num==4){
+                        $("#ys").css({
+                            'border': '10px solid #6FF'
+                        });
+                        $("#dj").css({
+                            'border-right': '10px solid #6FF',
+                            'color':'#6FF'
+                        });
+                        $("#dj").text("B")//等级为B的颜色
+
+                    }
+                    if (num==3){
+                        $("#ys").css({
+                            'border': '10px solid #FF3'
+                        });
+                        $("#dj").css({
+                            'border-right': '10px solid #FF3',
+                            'color':'#FF3'
+                        });
+                        $("#dj").text("C")//等级为C的颜色
+                    }
+                    if (num<=2){
+                        $("#ys").css({
+                            'border': '10px solid #3FC'
+                        });
+                        $("#dj").css({
+                            'border-right': '10px solid #3FC',
+                            'color':'#3FC'
+                        });
+                        $("#dj").text("D")//等级为D的颜色
+                    }
+                    $("#p3").show();
+                    return;
+                }
+                let bqn = "#Q"+(i-1);
+                $(bqn).hide();
+                let nqn = "#Q"+i;
+                $(nqn).show();
+                let bAn = "#AS"+(i-1);
+                $(bAn).hide();
+                let nAn = "#AS"+i;
+                $(nAn).show();
+
+
+            }
+        )
+        $("#return").click(
+            function () {
+                i--;
+                $("#next").text("Next");
+                if (i<1){
+                    i++;
+                    return;
+                }
+                let bqn = "#Q"+(i+1);
+                $(bqn).hide();
+                let nqn = "#Q"+i;
+                $(nqn).show();
+                let bAn = "#AS"+(i+1);
+                $(bAn).hide();
+                let nAn = "#AS"+i;
+                $(nAn).show();//切换页面
+
+            }
+        )
+
+        window.onload = function () {
+            setTimeout(function () {
+                $("#cby2020").fadeIn();
+                $("#cby2020").animate({
+                    top: '3em',
+                });
+            }, 1000);
+            setTimeout(function () {
+                $("#cby2020-2").fadeIn();
+            }, 2000);
+            setTimeout(function () {
+                $("#cby2020-3").fadeIn();
+            }, 3000);
+        }
+    });
+</script>
+</body>
+</html>
